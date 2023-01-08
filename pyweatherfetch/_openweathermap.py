@@ -1,6 +1,6 @@
 import json
 import hashlib
-from datetime import datetime, timezone, timedelta, tzinfo
+from datetime import datetime, timezone, timedelta
 from decimal import Decimal
 
 import urllib3

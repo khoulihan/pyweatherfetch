@@ -6,5 +6,5 @@ def locate(address):
     location = geolocator.geocode(address)
     if location == None:
         raise ValueError("Could not find location of address")
-    return (location.latitude, location.longitude)
+    return (location.latitude, location.longitude) # type: ignore
 

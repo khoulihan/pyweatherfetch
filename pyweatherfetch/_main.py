@@ -1,5 +1,4 @@
 from ctypes import ArgumentError
-from decimal import Decimal
 from pathlib import Path
 import click
 from ._location import locate
@@ -76,17 +75,9 @@ def fetch(longitude, latitude, address, location, template, units, out):
         _output(formatted, out)
     except IOError:
         click.echo("Failed to write output file.")
-        raise
         return 1
 
     return 0
-
-
-def _exclusive_options_specified(longitude, latitude, address, location):
-    latlong = longitude != None or latitude != None
-    return ((latlong and address != None) or
-        (latlong and location != None) or
-        (address != None and location != None))
 
 
 def _location_partially_specified(location, address, latitude, longitude):
